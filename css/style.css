@@ -195,6 +195,7 @@ SELECTOR {
     }
     
     article img:hover {
+        transition: all 2s;
         filter: grayscale(100%);
     }
     
