@@ -1,4 +1,4 @@
-/*
+    /*
 Esto es un comentario
 
 SELECTOR {
@@ -7,133 +7,197 @@ SELECTOR {
 
 
 */
-
-body {
-    background-color: black;
-    color: white;
-    margin: 0;
-}
-
-footer {
-    background-color: gray !important;
-    /* */
-    /*font-size: 0vh;*/
-    font-family: 'ZCOOL KuaiLe', cursive;
-    /*
+    
+    body {
+        background-color: black;
+        color: white;
+        margin: 0;
+    }
+    
+    footer {
+        background-color: gray !important;
+        /* */
+        /*font-size: 0vh;*/
+        font-family: 'ZCOOL KuaiLe', cursive;
+        /*
     vw : el ancho del viewport
     vh: el alto del viewport
     */
-}
-
-header {
-    background-color: #cc0000;
-}
-
-nav {
-    background-color: #cc0000;
-    width: 100vw;
-    min-height: 2.8em;
-    vertical-align: middle;
-    margin: 0;
-    padding: 0;
-    top: 0;
-    position: -webkit-sticky;
-    position: sticky;
-    z-index: 999;
-}
-
-nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #cc0000;
-}
-
-nav ul li {
-    display: block;
-    float: left;
-    padding-top: 1px;
-    padding-bottom: 1px;
-}
-
-nav ul li {
-    background-color: #cc0000;
-}
-
-nav ul li:hover {
-    background-color: #000;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    display: block;
-}
-
-nav ul li i {
-    color: white;
-}
-
-@media screen and (max-width: 600px) {
-    nav ul li {
-        float: none;
     }
-}
-
-
-/**************************************************/
-
-
-/*             Aca van los ID                    */
-
-
-/**************************************************/
-
-
-/* Lo usamos con ID en los atributos de HTML*/
-
-#login001 {
-    background-color: blueviolet;
-}
-
-
-/**************************************************/
-
-
-/*             articles                           */
-
-
-/**************************************************/
-
-section {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 10px;
-    width: 100vw;
-    text-align: center;
-}
-
-article {
-    text-align: left;
-    vertical-align: middle;
-    flex: 25vw;
-    max-width: 260px;
-    padding: 10px;
-}
-
-article img {
-    width: 95%;
-    min-width: 150px;
-    max-width: 25vw;
-}
-
-article img:hover {
-    filter: grayscale(100%);
-}
-
-article img:active {
-    box-shadow: 1px 1px 4px #ededed;
-}
+    
+    header {
+        background-color: #cc0000;
+    }
+    
+    nav {
+        background-color: #cc0000;
+        width: 100vw;
+        min-height: 2.8em;
+        vertical-align: middle;
+        margin: 0;
+        padding: 0;
+        top: 0;
+        position: -webkit-sticky;
+        position: sticky;
+        z-index: 999;
+    }
+    
+    .menu {
+        list-style-type: none;
+        list-style: none;
+        background-color: #cc0000;
+        clear: both;
+        max-height: 0;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        transition: max-height .2s ease-out;
+    }
+    
+    .menu li {
+        padding-top: 1px;
+        padding-bottom: 1px;
+        background-color: #cc0000;
+    }
+    
+    .menu li:hover,
+    .menu-btn:hover {
+        background-color: #000;
+    }
+    
+    .menu li a {
+        text-decoration: none;
+        color: white;
+        text-align: center;
+        padding: 10px 10px;
+        display: block;
+    }
+    
+    .menu li i {
+        color: white;
+    }
+    /* menu icon */
+    
+    .menu-icon {
+        cursor: pointer;
+        display: block;
+        float: left;
+        padding-top: 20px;
+        padding-right: 30px;
+        padding-left: 30px;
+        padding-bottom: 20px;
+        position: relative;
+        user-select: none;
+    }
+    
+    .menu-icon .navicon {
+        background: #fff;
+        display: block;
+        height: 2px;
+        position: relative;
+        transition: background .2s ease-out;
+        width: 20px;
+    }
+    
+    .menu-icon .navicon:before,
+    .menu-icon .navicon:after {
+        background: #fff;
+        content: '';
+        display: block;
+        height: 100%;
+        position: absolute;
+        transition: all .2s ease-out;
+        width: 100%;
+    }
+    
+    .menu-icon .navicon:before {
+        top: 5px;
+    }
+    
+    .menu-icon .navicon:after {
+        top: -5px;
+    }
+    /* menu btn */
+    
+    .menu-btn {
+        display: none;
+    }
+    
+    .menu-btn:checked~.menu {
+        max-height: 240px;
+    }
+    
+    .menu-btn:checked~.menu-icon .navicon {
+        background: transparent;
+    }
+    
+    .menu-btn:checked~.menu-icon .navicon:before {
+        transform: rotate(-45deg);
+    }
+    
+    .menu-btn:checked~.menu-icon .navicon:after {
+        transform: rotate(45deg);
+    }
+    
+    .menu-btn:checked~.menu-icon:not(.steps) .navicon:before,
+    .menu-btn:checked~.menu-icon:not(.steps) .navicon:after {
+        top: 0;
+    }
+    
+    @media screen and (min-width: 600px) {
+        .menu li {
+            float: left;
+        }
+        .menu li a {
+            padding: 10px 10px;
+        }
+        .menu {
+            clear: none;
+            float: left;
+            max-height: none;
+        }
+        .menu-icon {
+            display: none;
+        }
+    }
+    /**************************************************/
+    /*             Aca van los ID                    */
+    /**************************************************/
+    /* Lo usamos con ID en los atributos de HTML*/
+    
+    #login001 {
+        background-color: blueviolet;
+    }
+    /**************************************************/
+    /*             articles                           */
+    /**************************************************/
+    
+    section {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 10px;
+        width: 100vw;
+        text-align: center;
+    }
+    
+    article {
+        text-align: left;
+        vertical-align: middle;
+        flex: 25vw;
+        max-width: 260px;
+        padding: 10px;
+    }
+    
+    article img {
+        width: 95%;
+        min-width: 150px;
+        max-width: 25vw;
+    }
+    
+    article img:hover {
+        filter: grayscale(100%);
+    }
+    
+    article img:active {
+        box-shadow: 1px 1px 4px #ededed;
+    }
