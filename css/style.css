@@ -8,16 +8,22 @@ SELECTOR {
 
 */
     
+    * {
+        border-style: dotted;
+        border: 1px;
+        border-color: aquamarine;
+    }
+    
     body {
         background-color: black;
         color: white;
-        margin: 0;
+        margin: 0px;
+        padding: 0px;
+        font-size: 16px;
     }
     
     footer {
         background-color: gray !important;
-        /* */
-        /*font-size: 0vh;*/
         font-family: 'ZCOOL KuaiLe', cursive;
         /*
     vw : el ancho del viewport
@@ -39,6 +45,7 @@ SELECTOR {
         top: 0;
         position: -webkit-sticky;
         position: sticky;
+        font-size: 1.5rem;
         z-index: 999;
     }
     
@@ -124,7 +131,7 @@ SELECTOR {
     }
     
     .menu-btn:checked~.menu {
-        max-height: 240px;
+        max-height: 290px;
     }
     
     .menu-btn:checked~.menu-icon .navicon {
@@ -143,23 +150,6 @@ SELECTOR {
     .menu-btn:checked~.menu-icon:not(.steps) .navicon:after {
         top: 0;
     }
-    
-    @media screen and (min-width: 600px) {
-        .menu li {
-            float: left;
-        }
-        .menu li a {
-            padding: 10px 10px;
-        }
-        .menu {
-            clear: none;
-            float: left;
-            max-height: none;
-        }
-        .menu-icon {
-            display: none;
-        }
-    }
     /**************************************************/
     /*             Aca van los ID                    */
     /**************************************************/
@@ -175,23 +165,24 @@ SELECTOR {
     section {
         display: flex;
         flex-wrap: wrap;
+        align-content: space-around;
         padding: 10px;
         width: 100vw;
         text-align: center;
+        margin: 0;
+        padding: 0;
+        width: 100%;
     }
     
     article {
         text-align: left;
         vertical-align: middle;
-        flex: 25vw;
-        max-width: 260px;
+        flex: 22vw;
         padding: 10px;
     }
     
     article img {
         width: 95%;
-        min-width: 150px;
-        max-width: 25vw;
     }
     
     article img:hover {
@@ -201,4 +192,59 @@ SELECTOR {
     
     article img:active {
         box-shadow: 1px 1px 4px #ededed;
+    }
+    /* pantallas chicas */
+    
+    article {
+        min-width: 95%;
+        max-width: 100%;
+    }
+    
+    article img {
+        max-width: 95vw;
+    }
+    /* celulares grandes */
+    
+    @media screen and (min-width: 330px) {
+        article {
+            min-width: 44%;
+            max-width: 49%;
+        }
+        article img {
+            max-width: 44vw;
+        }
+        /* tablet */
+        @media screen and (min-width: 600px) {
+            article {
+                min-width: 30%;
+                max-width: 33%;
+            }
+            article img {
+                max-width: 30vw;
+            }
+            /* pc escritorio */
+            @media screen and (min-width: 700px) {
+                .menu li {
+                    float: left;
+                }
+                .menu li a {
+                    padding: 10px 10px;
+                }
+                .menu {
+                    clear: none;
+                    float: left;
+                    max-height: none;
+                }
+                .menu-icon {
+                    display: none;
+                }
+                article {
+                    max-width: 25%;
+                    min-width: 22%;
+                }
+                article img {
+                    max-width: 22vw;
+                }
+            }
+        }
     }
