@@ -85,7 +85,7 @@ SELECTOR {
     /* menu icon */
     
     .menu-icon {
-        cursor: pointer;
+        cursor: context-menu;
         display: block;
         float: left;
         padding-top: 20px;
