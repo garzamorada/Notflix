@@ -1,262 +1,396 @@
-    /*
-Esto es un comentario
-
-SELECTOR {
-    propiedad: valor;
-}
-
-
-*/
-    
-    * {
-        border-style: dotted;
-        border: 1px;
-        border-color: aquamarine;
-    }
-    
-    body {
-        background-color: black;
-        color: white;
-        margin: 0px;
-        padding: 0px;
-        font-size: 16px;
-    }
-    
-    footer {
-        background-color: gray !important;
-        font-family: 'ZCOOL KuaiLe', cursive;
-        /*
-    vw : el ancho del viewport
-    vh: el alto del viewport
-    */
-    }
-    
-    header {
-        background-color: #cc0000;
-    }
-    
-    nav {
-        background-color: #cc0000;
-        width: 100vw;
-        min-height: 2.8em;
-        vertical-align: middle;
-        margin: 0;
-        padding: 0;
-        top: 0;
-        position: -webkit-sticky;
-        position: sticky;
-        z-index: 999;
-    }
-    
-    .menu {
-        list-style-type: none;
-        list-style: none;
-        background-color: #cc0000;
-        clear: both;
-        max-height: 0;
-        margin: 0;
-        padding: 0;
-        overflow: hidden;
-        transition: max-height .2s ease-out;
-    }
-    
-    .menu li {
-        padding-top: 1px;
-        padding-bottom: 1px;
-        background-color: #cc0000;
-    }
-    
-    .menu li:hover,
-    .menu-btn:hover {
-        background-color: #000;
-    }
-    
-    .menu li a {
-        text-decoration: none;
-        color: white;
-        text-align: center;
-        padding: 10px 10px;
-        display: block;
-    }
-    
-    .menu li i {
-        color: white;
-    }
-    /* menu icon */
-    
-    .menu-icon {
-        cursor: context-menu;
-        display: block;
-        float: left;
-        padding-top: 20px;
-        padding-right: 30px;
-        padding-left: 30px;
-        padding-bottom: 20px;
-        position: relative;
-        user-select: none;
-    }
-    
-    .menu-icon .navicon {
-        background: #fff;
-        display: block;
-        height: 2px;
-        position: relative;
-        transition: background .2s ease-out;
-        width: 20px;
-    }
-    
-    .menu-icon .navicon:before,
-    .menu-icon .navicon:after {
-        background: #fff;
-        content: '';
-        display: block;
-        height: 100%;
-        position: absolute;
-        transition: all .2s ease-out;
-        width: 100%;
-    }
-    
-    .menu-icon .navicon:before {
-        top: 5px;
-    }
-    
-    .menu-icon .navicon:after {
-        top: -5px;
-    }
-    /* menu btn */
-    
-    .menu-btn {
-        display: none;
-    }
-    
-    .menu-btn:checked~.menu {
-        max-height: 290px;
-    }
-    
-    .menu-btn:checked~.menu-icon .navicon {
-        background: transparent;
-    }
-    
-    .menu-btn:checked~.menu-icon .navicon:before {
-        transform: rotate(-45deg);
-    }
-    
-    .menu-btn:checked~.menu-icon .navicon:after {
-        transform: rotate(45deg);
-    }
-    
-    .menu-btn:checked~.menu-icon:not(.steps) .navicon:before,
-    .menu-btn:checked~.menu-icon:not(.steps) .navicon:after {
-        top: 0;
-    }
-    /**************************************************/
-    /*             Aca van los ID                    */
-    /**************************************************/
-    /* Lo usamos con ID en los atributos de HTML*/
-    
-    #login001 {
-        background-color: blueviolet;
-    }
-    /**************************************************/
-    /*             articles                           */
-    /**************************************************/
-    
-    section {
-        display: flex;
-        flex-wrap: wrap;
-        align-content: space-around;
-        padding: 10px;
-        width: 100vw;
-        text-align: center;
-        margin: 0;
-        padding: 0;
-        width: 100%;
-    }
-    
-    article {
-        text-align: left;
-        vertical-align: middle;
-        flex: 22vw;
-        padding: 10px;
-    }
-    
-    article img {
-        width: 95%;
-    }
-    
-    article img:hover {
-        transition: all 2s;
-        filter: grayscale(100%);
-    }
-    
-    article img:active {
-        box-shadow: 1px 1px 4px #ededed;
-    }
-    /* pantallas chicas */
-    
-    article {
-        min-width: 95%;
-        max-width: 100%;
-    }
-    
-    article img {
-        max-width: 95vw;
-    }
-    
-    nav {
-        font-size: 1.25rem;
-    }
-    /* celulares grandes */
-    
-    @media screen and (min-width: 330px) {
-        article {
-            min-width: 44%;
-            max-width: 49%;
-        }
-        article img {
-            max-width: 44vw;
-        }
-        nav {
-            font-size: 1.5rem;
-        }
-        /* tablet */
-        @media screen and (min-width: 600px) {
-            article {
-                min-width: 30%;
-                max-width: 33%;
-            }
-            article img {
-                max-width: 30vw;
-            }
-            nav {
-                font-size: 1.25rem;
-            }
-            /* pc escritorio */
-            @media screen and (min-width: 700px) {
-                .menu li {
-                    float: left;
-                }
-                .menu li a {
-                    padding: 10px 10px;
-                }
-                .menu {
-                    clear: none;
-                    float: left;
-                    max-height: none;
-                }
-                .menu-icon {
-                    display: none;
-                }
-                article {
-                    max-width: 25%;
-                    min-width: 22%;
-                }
-                article img {
-                    max-width: 22vw;
-                }
-                nav {
-                    font-size: 1.25rem;
-                }
-            }
-        }
-    }
+                   * {
+                       font-family: 'Open Sans', sans-serif;
+                   }
+                   
+                   body {
+                       background-color: black;
+                       color: white;
+                       margin: 0px;
+                       padding: 0px;
+                       font-size: 14px;
+                   }
+                   
+                   footer {
+                       background-color: gray !important;
+                       font-family: 'ZCOOL KuaiLe', cursive;
+                   }
+                   
+                   .logo {
+                       grid-area: logo;
+                       display: none;
+                   }
+                   
+                   nav {
+                       grid-area: nav;
+                       display: block;
+                       font-size: 1rem;
+                       width: 100%;
+                       margin: 0;
+                       padding: 0;
+                       top: 0;
+                       position: -webkit-sticky;
+                       position: sticky;
+                       z-index: 999;
+                   }
+                   
+                   header {
+                       background-color: #cc0000;
+                       padding: 0%;
+                       width: 100%;
+                       display: grid;
+                       grid-template-areas: 'nav nav nav nav';
+                   }
+                   
+                   .menu {
+                       list-style-type: none;
+                       list-style: none;
+                       width: 100%;
+                       clear: both;
+                       margin: 0;
+                       padding: 0;
+                       display: none;
+                       transition: all .2s ease-out;
+                   }
+                   
+                   .menu li {
+                       padding: 5px;
+                       background-color: #cc0000;
+                       display: block;
+                       width: 100%;
+                       padding-left: 50px;
+                   }
+                   
+                   .menu label {
+                       padding-left: 10px;
+                   }
+                   
+                   .menu li:hover,
+                   .menu-btn:hover {
+                       background-color: #000;
+                   }
+                   
+                   .menu li a {
+                       text-decoration: none;
+                       color: white;
+                       text-align: left;
+                       padding: 10px 10px;
+                       display: block;
+                   }
+                   
+                   .menu li i {
+                       color: white;
+                   }
+                   /* menu icon */
+                   
+                   .menu-icon {
+                       cursor: default;
+                       display: block;
+                       float: right;
+                       position: relative;
+                       user-select: none;
+                       padding: 20px;
+                   }
+                   
+                   .menu-icon .navicon {
+                       background: #fff;
+                       display: block;
+                       height: 2px;
+                       position: relative;
+                       transition: background .2s ease-out;
+                       width: 20px;
+                   }
+                   
+                   .menu-icon .navicon:before,
+                   .menu-icon .navicon:after {
+                       background: #fff;
+                       content: '';
+                       display: block;
+                       height: 100%;
+                       position: absolute;
+                       transition: all .2s ease-out;
+                       width: 100%;
+                   }
+                   
+                   .menu-icon .navicon:before {
+                       top: 5px;
+                   }
+                   
+                   .menu-icon .navicon:after {
+                       top: -5px;
+                   }
+                   /* menu btn */
+                   
+                   .menu-btn {
+                       display: none;
+                   }
+                   
+                   .menu-btn:checked~.menu {
+                       flex-direction: column;
+                       display: flex;
+                   }
+                   
+                   .menu-btn:checked~.menu-icon .navicon {
+                       background: transparent;
+                   }
+                   
+                   .menu-btn:checked~.menu-icon .navicon:before {
+                       transform: rotate(-45deg);
+                   }
+                   
+                   .menu-btn:checked~.menu-icon .navicon:after {
+                       transform: rotate(45deg);
+                   }
+                   
+                   .menu-btn:checked~.menu-icon:not(.steps) .navicon:before,
+                   .menu-btn:checked~.menu-icon:not(.steps) .navicon:after {
+                       top: 0;
+                   }
+                   /**************************************************/
+                   /*             Aca van los ID                    */
+                   /**************************************************/
+                   /* Lo usamos con ID en los atributos de HTML*/
+                   
+                   #login001 {
+                       background-color: blueviolet;
+                   }
+                   /**************************************************/
+                   /*             articles                           */
+                   /**************************************************/
+                   
+                   section {
+                       display: grid;
+                       grid-gap: 30px;
+                       grid-template-columns: auto;
+                       padding: 30px;
+                       text-align: center;
+                       vertical-align: middle;
+                   }
+                   
+                   article {
+                       text-align: center;
+                       vertical-align: middle;
+                   }
+                   
+                   article img:hover {
+                       transition: all 2s;
+                       filter: grayscale(100%);
+                   }
+                   
+                   article img:active {
+                       box-shadow: 1px 1px 4px #ededed;
+                   }
+                   
+                   article img {
+                       max-width: 95%;
+                   }
+                   /**********************************************/
+                   /*        DEFINO COMPORTAMIENTO X TAMAÑO      */
+                   /**********************************************/
+                   
+                   @media screen and (min-width: 360px) {
+                       /* celulares grandes */
+                       section {
+                           grid-template-columns: auto auto;
+                       }
+                   }
+                   
+                   @media screen and (min-width: 768px) {
+                       /* tablet */
+                       header {
+                           grid-template-areas: 'logo nav nav nav nav';
+                       }
+                       .logo {
+                           grid-area: logo;
+                           display: block;
+                       }
+                       section {
+                           grid-template-columns: auto auto auto auto;
+                       }
+                       .menu label {
+                           display: none;
+                       }
+                       .menu i:hover~label {
+                           display: block;
+                           position: absolute;
+                           top: 50px;
+                           margin-left: 10px;
+                           overflow: visible;
+                           padding: 2px;
+                           background-color: khaki;
+                           color: black;
+                           border: 1px white;
+                           font-size: 0.75rem;
+                           transition: all 5s;
+                       }
+                       .menu-btn:checked~.menu {
+                           flex-direction: row;
+                           display: flex;
+                       }
+                       .menu {
+                           clear: none;
+                           float: left;
+                           max-height: none;
+                           flex-direction: row;
+                           display: flex;
+                           margin-top: 15px;
+                       }
+                       .menu li,
+                       .menu li a {
+                           padding-left: 0;
+                           text-align: center;
+                           cursor: default;
+                       }
+                       .menu-icon {
+                           display: none;
+                       }
+                   }
+                   
+                   @media screen and (min-width: 1024px) {
+                       /* pc escritorio */
+                       header {
+                           grid-template-areas: 'logo logo logo logo' 'nav nav nav nav';
+                       }
+                       .menu li {
+                           float: left;
+                           width: auto;
+                           padding-left: 20px;
+                       }
+                       .menu li a {
+                           padding: 10px 10px;
+                           vertical-align: middle;
+                       }
+                       .menu label {
+                           padding-left: 10px;
+                           display: initial;
+                       }
+                       .menu i:hover~label {
+                           display: block;
+                           position: initial;
+                           top: 0;
+                           float: right;
+                           margin-left: 0;
+                           overflow: auto;
+                           padding: 0px;
+                           padding-left: 10px;
+                           background-color: black;
+                           color: white;
+                           border: none;
+                           font-size: 1rem;
+                           transition: none;
+                       }
+                       .menu-btn:checked~.menu {
+                           flex-direction: row;
+                           display: flex;
+                       }
+                       .menu {
+                           clear: none;
+                           float: left;
+                           max-height: none;
+                           flex-direction: row;
+                           display: flex;
+                           margin-top: 15px;
+                       }
+                       .menu-icon {
+                           display: none;
+                       }
+                       section {
+                           grid-template-columns: auto auto auto auto auto;
+                       }
+                   }
+                   /************************************************/
+                   /*               FORMULARIO LOGIN               */
+                   /************************************************/
+                   
+                   .mostrar {
+                       display: block;
+                       transition: display 5s;
+                   }
+                   
+                   .oculto {
+                       display: none;
+                       transition: display 5s;
+                   }
+                   
+                   .formulario_flotante {
+                       float: right;
+                       position: absolute;
+                       padding: 20px;
+                       top: 50px;
+                       right: 10%;
+                       overflow: hidden;
+                       background: rgb(33, 33, 33);
+                       border: solid 2px black;
+                       border-radius: 10px;
+                       font-size: 0.75rem;
+                       z-index: 1000;
+                   }
+                   
+                   .formulario_flotante a {
+                       float: right;
+                       padding: 5px;
+                       display: block;
+                       cursor: default;
+                       position: relative;
+                       top: -10px;
+                       left: 10px;
+                       text-decoration: none;
+                       color: white;
+                       font-weight: bolder;
+                       border-radius: 5px;
+                       background-color: #cc0000;
+                       box-shadow: black 2px 2px 2px;
+                   }
+                   
+                   .formulario_flotante a:active {
+                       top: -8px;
+                       left: 12px;
+                       background-color: black;
+                       box-shadow: 0 0 0;
+                   }
+                   
+                   .formulario_flotante form {
+                       clear: both;
+                   }
+                   
+                   .formulario_flotante label {
+                       float: left;
+                       margin-right: 10px;
+                       padding: 5px;
+                       display: block;
+                       vertical-align: middle;
+                   }
+                   
+                   .campo {
+                       background-color: black;
+                       border: white 2px;
+                       border-radius: 5px;
+                       color: white;
+                       padding: 5px;
+                       font-size: 0.75rem;
+                       font-family: 'Open Sans', sans-serif;
+                   }
+                   
+                   .boton {
+                       background-color: #cc0000;
+                       border: white 2px;
+                       border-radius: 5px;
+                       color: white;
+                       font-weight: bolder;
+                       font-size: 0.75rem;
+                       font-family: 'Open Sans', sans-serif;
+                       padding: 10px;
+                       box-shadow: black 2px 2px 2px;
+                   }
+                   
+                   .boton:active {
+                       background-color: black;
+                       border: white 2px;
+                       border-radius: 5px;
+                       color: white;
+                       font-weight: bolder;
+                       padding: 10px;
+                       position: relative;
+                       box-shadow: 0 0 0;
+                       top -2px;
+                       left: 2px;
+                   }
