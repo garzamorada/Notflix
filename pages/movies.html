@@ -5,38 +5,53 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/style.css">
+    <script src="https://kit.fontawesome.com/59c8ee105d.js" crossorigin="anonymous"></script>
     <title>Lista de Peliculas</title>
 </head>
 
 <body>
     <header>
-        <img src="../assets/images/NOTFLIX.jpeg">
+        <div class="logo"><img src="../assets/images/NOTFLIX.jpeg"></div>
+        <div class="formulario_flotante oculto" id="formulario_flotante">
+            <a href="#" onclick="abre_cierra('cerrar')">X</a>
+            <form action="https://www.w3schools.com/action_page.php" method="POST" target="__blank">
+                <label><i class="fas fa-user"></i> </label><input class="campo" type="text" id="fnameID" name="fname" placeholder="Usuario" size="12" required maxlength="20">
+                <br><br>
+                <label><i class="fas fa-key"></i> </label><input class="campo" type="password" id="passwordID" name="password" placeholder="Contraseña" size="12" required maxlength="12">
+                <br><br>
+                <input class="boton" type="submit" value="Ingresar">
+            </form>
+        </div>
+        <nav>
+            <input class="menu-btn" type="checkbox" id="menu-btn" />
+            <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+            <ul class="menu">
+                <li>
+                    <a href="../index.html"><i class="fas fa-home"></i><label>Home</label></a>
+                </li>
+                <li>
+                    <a href="../pages/movies.html"><i class="fa fa-film "></i><label>Peliculas</label></a>
+                </li>
+                <li>
+                    <a href="#" onclick="abre_cierra('abrir')"><i class="fas fa-user"></i><label>Ingresar</label></a>
+                </li>
+                <li>
+                    <a href="../pages/signup.html"><i class="fas fa-user-plus"></i><label>Registro</label></a>
+                </li>
+                <li>
+                    <a href="../pages/contact.html"><i class="fas fa-envelope-open-text"></i><label>Contactanos</label></a>
+                </li>
+                <li>
+                    <a href="https://www.google.com" target="__blank"><i class="fas fa-link"></i><label>Enlace a otro lado</label></a>
+                </li>
+            </ul>
+        </nav>
     </header>
-    <nav>
-        <input class="menu-btn" type="checkbox" id="menu-btn" />
-        <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
-        <ul class="menu">
-            <li>
-                <a href="../index.html">Home</a>
-            </li>
-            <li>
-                <a href="../pages/movies.html"><i class="fa fa-film "></i> Peliculas</a>
-            </li>
-            <li>
-                <a href="../pages/login.html">Ingresar</a>
-            </li>
-            <li>
-                <a href="../pages/signup.html">Registro</a>
-            </li>
-            <li>
-                <a href="../pages/contact.html">Contactanos</a>
-            </li>
-            <li>
-                <a href="https://www.google.com" target="__blank">Enlace a otro lado</a>
-            </li>
-        </ul>
-    </nav>
+
     <section>
         <article>
             <a href="../pages/player.html">
@@ -86,5 +101,6 @@
     </section>
     <footer style="background-color:turquoise;"> Copyright 2021</footer>
 </body>
+<script src="../js/app.js"></script>
 
 </html>
