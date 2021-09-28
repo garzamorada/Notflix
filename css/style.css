@@ -1,408 +1,428 @@
-                   * {
-                       font-family: 'Open Sans', sans-serif;
-                   }
-                   
-                   body {
-                       background-color: black;
-                       color: white;
-                       margin: 0px;
-                       padding: 0px;
-                       font-size: 14px;
-                   }
-                   
-                   footer {
-                       background-color: gray !important;
-                       font-family: 'ZCOOL KuaiLe', cursive;
-                   }
-                   
-                   .logo {
-                       grid-area: logo;
-                       display: none;
-                   }
-                   
-                   nav {
-                       grid-area: nav;
-                       display: block;
-                       font-size: 1rem;
-                       width: 100%;
-                       margin: 0;
-                       padding: 0;
-                       top: 0;
-                       position: -webkit-sticky;
-                       position: sticky;
-                       z-index: 999;
-                   }
-                   
-                   header {
-                       background-color: #cc0000;
-                       padding: 0%;
-                       width: 100%;
-                       display: grid;
-                       grid-template-areas: 'nav nav nav nav';
-                   }
-                   
-                   .menu {
-                       list-style-type: none;
-                       list-style: none;
-                       width: 100%;
-                       clear: both;
-                       margin: 0;
-                       padding: 0;
-                       display: none;
-                       transition: all .2s ease-out;
-                   }
-                   
-                   .menu li {
-                       padding: 5px;
-                       background-color: #cc0000;
-                       display: block;
-                       width: 100%;
-                       padding-left: 50px;
-                   }
-                   
-                   .menu label {
-                       padding-left: 10px;
-                   }
-                   
-                   .menu li:hover,
-                   .menu-btn:hover {
-                       background-color: #000;
-                   }
-                   
-                   .menu li a {
-                       text-decoration: none;
-                       color: white;
-                       text-align: left;
-                       padding: 10px 10px;
-                       display: block;
-                   }
-                   
-                   .menu li i {
-                       color: white;
-                   }
-                   /* menu icon */
-                   
-                   .menu-icon {
-                       cursor: default;
-                       display: block;
-                       float: right;
-                       position: relative;
-                       user-select: none;
-                       padding: 20px;
-                   }
-                   
-                   .menu-icon .navicon {
-                       background: #fff;
-                       display: block;
-                       height: 2px;
-                       position: relative;
-                       transition: all .2s ease-out;
-                       width: 20px;
-                   }
-                   
-                   .menu-icon .navicon:before,
-                   .menu-icon .navicon:after {
-                       background: #fff;
-                       content: '';
-                       display: block;
-                       height: 100%;
-                       position: absolute;
-                       transition: all .2s ease-out;
-                       width: 100%;
-                   }
-                   
-                   .menu-icon .navicon:before {
-                       top: 5px;
-                   }
-                   
-                   .menu-icon .navicon:after {
-                       top: -5px;
-                   }
-                   /* menu btn */
-                   
-                   .menu-btn {
-                       display: none;
-                   }
-                   
-                   .menu-btn:checked~.menu {
-                       flex-direction: column;
-                       display: flex;
-                   }
-                   
-                   .menu-btn:checked~.menu-icon .navicon {
-                       background: transparent;
-                   }
-                   
-                   .menu-btn:checked~.menu-icon .navicon:before {
-                       transform: rotate(-45deg);
-                   }
-                   
-                   .menu-btn:checked~.menu-icon .navicon:after {
-                       transform: rotate(45deg);
-                   }
-                   
-                   .menu-btn:checked~.menu-icon:not(.steps) .navicon:before,
-                   .menu-btn:checked~.menu-icon:not(.steps) .navicon:after {
-                       top: 0;
-                   }
-                   /**************************************************/
-                   /*             Aca van los ID                    */
-                   /**************************************************/
-                   /* Lo usamos con ID en los atributos de HTML*/
-                   
-                   #login001 {
-                       background-color: blueviolet;
-                   }
-                   /**************************************************/
-                   /*             articles                           */
-                   /**************************************************/
-                   
-                   section {
-                       display: grid;
-                       grid-gap: 30px;
-                       grid-template-columns: auto;
-                       padding: 30px;
-                       text-align: center;
-                       vertical-align: middle;
-                   }
-                   
-                   article {
-                       text-align: center;
-                       vertical-align: middle;
-                   }
-                   
-                   article img:hover {
-                       transition: all 2s;
-                       filter: grayscale(100%);
-                   }
-                   
-                   article img:active {
-                       box-shadow: 1px 1px 4px #ededed;
-                   }
-                   
-                   article img {
-                       max-width: 95%;
-                   }
-                   /**********************************************/
-                   /*        DEFINO COMPORTAMIENTO X TAMAÑO      */
-                   /**********************************************/
-                   
-                   @media screen and (min-width: 360px) {
-                       /* celulares grandes */
-                       section {
-                           grid-template-columns: auto auto;
-                       }
-                   }
-                   
-                   @media screen and (min-width: 768px) {
-                       /* tablet */
-                       header {
-                           grid-template-areas: 'logo nav nav nav nav';
-                       }
-                       .logo {
-                           grid-area: logo;
-                           display: block;
-                       }
-                       .logo img, .logo object {
-                        max-height: 50px;
-                        margin: 5px;
-                        fill: black;
-                       }
-                       section {
-                           grid-template-columns: auto auto auto auto;
-                       }
-                       .menu label {
-                           display: none;
-                       }
-                       .menu i:hover~label {
-                           display: block;
-                           position: absolute;
-                           top: 50px;
-                           margin-left: 10px;
-                           overflow: visible;
-                           padding: 2px;
-                           background-color: khaki;
-                           color: black;
-                           border: 1px white;
-                           font-size: 0.75rem;
-                           transition: all 5s;
-                       }
-                       .menu-btn:checked~.menu {
-                           flex-direction: row;
-                           display: flex;
-                       }
-                       .menu {
-                           clear: none;
-                           float: left;
-                           max-height: none;
-                           flex-direction: row;
-                           display: flex;
-                           margin-top: 15px;
-                       }
-                       .menu li,
-                       .menu li a {
-                           padding-left: 0;
-                           text-align: center;
-                           cursor: default;
-                       }
-                       .menu-icon {
-                           display: none;
-                       }
-                   }
-                   
-                   @media screen and (min-width: 1024px) {
-                       /* pc escritorio */
-                       header {
-                           grid-template-areas: 'logo logo logo logo' 'nav nav nav nav';
-                       }
-                       .menu li {
-                           float: left;
-                           width: auto;
-                           padding-left: 20px;
-                       }
-                       .menu li a {
-                           padding: 10px 10px;
-                           vertical-align: middle;
-                       }
-                       .menu label {
-                           padding-left: 10px;
-                           display: initial;
-                       }
-                       .menu i:hover~label {
-                           display: block;
-                           position: initial;
-                           top: 0;
-                           float: right;
-                           margin-left: 0;
-                           overflow: auto;
-                           padding: 0px;
-                           padding-left: 10px;
-                           background-color: black;
-                           color: white;
-                           border: none;
-                           font-size: 1rem;
-                           transition: none;
-                       }
-                       .menu-btn:checked~.menu {
-                           flex-direction: row;
-                           display: flex;
-                       }
-                       .menu {
-                           clear: none;
-                           float: left;
-                           max-height: none;
-                           flex-direction: row;
-                           display: flex;
-                           margin-top: 15px;
-                       }
-                       .menu-icon {
-                           display: none;
-                       }
-                       section {
-                           grid-template-columns: auto auto auto auto auto;
-                       }
-                   }
-                   /************************************************/
-                   /*               FORMULARIO LOGIN               */
-                   /************************************************/
-                   
-                   .mostrar {
-                       display: block;
-                       transition: display 5s;
-                   }
-                   
-                   .oculto {
-                       display: none;
-                       transition: display 5s;
-                   }
-                   
-                   .formulario_flotante {
-                       float: right;
-                       position: absolute;
-                       padding: 20px;
-                       top: 50px;
-                       right: 10%;
-                       overflow: hidden;
-                       background-color: #666666;
-                       border: solid 2px black;
-                       border-radius: 10px;
-                       font-size: 0.75rem;
-                       z-index: 1000;
-                   }
-                   
-                   .formulario_flotante a {
-                       float: right;
-                       padding: 5px;
-                       display: block;
-                       cursor: default;
-                       position: relative;
-                       top: -10px;
-                       left: 10px;
-                       text-decoration: none;
-                       color: white;
-                       border-radius: 5px;
-                       background-color: #cc0000;
-                       border: solid 1px rgb(44, 0, 0);
-                       box-shadow: black 2px 2px 2px;
-                   }
-                   
-                   .formulario_flotante a:active {
-                       top: -8px;
-                       left: 12px;
-                       background-color: black;
-                       box-shadow: 0 0 0;
-                   }
-                   
-                   .formulario_flotante form {
-                       clear: both;
-                   }
-                   
-                   .formulario_flotante label {
-                       float: left;
-                       margin-right: 10px;
-                       padding: 5px;
-                       display: block;
-                       vertical-align: middle;
-                   }
-                   
-                   .campo {
-                       background-color: #333333;
-                       border: solid white 1px;
-                       border-radius: 5px;
-                       color: white;
-                       padding: 5px;
-                       font-size: 0.75rem;
-                       font-family: 'Open Sans', sans-serif;
-                   }
-                   
-                   .boton {
-                       background-color: #cc0000;
-                       border: solid 1px rgb(44, 0, 0);
-                       border-radius: 5px;
-                       color: white;
-                       font-size: 1rem;
-                       font-family: 'Open Sans', sans-serif;
-                       padding: 5px;
-                       box-shadow: black 2px 2px 2px;
-                   }
-                   
-                   .boton:active {
-                       background-color: black;
-                       position: relative;
-                       box-shadow: 0 0 0;
-                       top -2px;
-                       left: 2px;
-                   }
-
-                   .registro {
-                       background: #666666;
-                       margin: 30px;
-                       padding: 20px;
-                       border: solid 1px black;
-                       border-radius: 10px;
-                   }
-
-                   .registro input, .registro select {
-                       background-color: #333333;
-                       color: white;
-                   }
+    * {
+        font-family: 'Open Sans', sans-serif;
+    }
+    
+    body {
+        background-color: black;
+        color: white;
+        margin: 0px;
+        padding: 0px;
+        font-size: 14px;
+    }
+    
+    footer {
+        background-color: gray !important;
+        font-family: 'ZCOOL KuaiLe', cursive;
+    }
+    
+    .logo {
+        grid-area: logo;
+        display: none;
+    }
+    
+    nav {
+        grid-area: nav;
+        display: block;
+        font-size: 1rem;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        top: 0;
+        position: -webkit-sticky;
+        position: sticky;
+        z-index: 999;
+    }
+    
+    header {
+        background-color: #cc0000;
+        padding: 0%;
+        width: 100%;
+        display: grid;
+        grid-template-areas: 'nav nav nav nav';
+    }
+    
+    .menu {
+        list-style-type: none;
+        list-style: none;
+        width: 100%;
+        clear: both;
+        margin: 0;
+        padding: 0;
+        display: none;
+        transition: all .2s ease-out;
+    }
+    
+    .menu li {
+        padding: 5px;
+        background-color: #cc0000;
+        display: block;
+        width: 100%;
+        padding-left: 50px;
+    }
+    
+    .menu label {
+        padding-left: 10px;
+    }
+    
+    .menu li:hover,
+    .menu-btn:hover {
+        background-color: #000;
+    }
+    
+    .menu li a {
+        text-decoration: none;
+        color: white;
+        text-align: left;
+        padding: 10px 10px;
+        display: block;
+    }
+    
+    .menu li i {
+        color: white;
+    }
+    /* menu icon */
+    
+    .menu-icon {
+        cursor: default;
+        display: block;
+        float: right;
+        position: relative;
+        user-select: none;
+        padding: 20px;
+    }
+    
+    .menu-icon .navicon {
+        background: #fff;
+        display: block;
+        height: 2px;
+        position: relative;
+        transition: all .2s ease-out;
+        width: 20px;
+    }
+    
+    .menu-icon .navicon:before,
+    .menu-icon .navicon:after {
+        background: #fff;
+        content: '';
+        display: block;
+        height: 100%;
+        position: absolute;
+        transition: all .2s ease-out;
+        width: 100%;
+    }
+    
+    .menu-icon .navicon:before {
+        top: 5px;
+    }
+    
+    .menu-icon .navicon:after {
+        top: -5px;
+    }
+    /* menu btn */
+    
+    .menu-btn {
+        display: none;
+    }
+    
+    .menu-btn:checked~.menu {
+        flex-direction: column;
+        display: flex;
+    }
+    
+    .menu-btn:checked~.menu-icon .navicon {
+        background: transparent;
+    }
+    
+    .menu-btn:checked~.menu-icon .navicon:before {
+        transform: rotate(-45deg);
+    }
+    
+    .menu-btn:checked~.menu-icon .navicon:after {
+        transform: rotate(45deg);
+    }
+    
+    .menu-btn:checked~.menu-icon:not(.steps) .navicon:before,
+    .menu-btn:checked~.menu-icon:not(.steps) .navicon:after {
+        top: 0;
+    }
+    /**************************************************/
+    /*             articles                           */
+    /**************************************************/
+    
+    section {
+        display: grid;
+        grid-gap: 30px;
+        grid-template-columns: auto;
+        padding: 30px;
+        text-align: center;
+        vertical-align: middle;
+    }
+    
+    article {
+        text-align: center;
+        vertical-align: middle;
+    }
+    
+    article img:hover {
+        transition: all 2s;
+        filter: grayscale(100%);
+    }
+    
+    article img:active {
+        box-shadow: 1px 1px 4px #ededed;
+    }
+    
+    article img {
+        max-width: 95%;
+    }
+    /**********************************************/
+    /*        DEFINO COMPORTAMIENTO X TAMAÑO      */
+    /**********************************************/
+    
+    @media screen and (min-width: 360px) {
+        /* celulares grandes */
+        section {
+            grid-template-columns: auto auto;
+        }
+    }
+    
+    @media screen and (min-width: 768px) {
+        /* tablet */
+        header {
+            grid-template-areas: 'logo nav nav nav nav';
+        }
+        .logo {
+            grid-area: logo;
+            display: block;
+        }
+        .logo img,
+        .logo object {
+            max-height: 50px;
+            margin: 5px;
+            fill: black;
+        }
+        section {
+            grid-template-columns: auto auto auto auto;
+        }
+        .menu label {
+            display: none;
+        }
+        .menu i:hover~label {
+            display: block;
+            position: absolute;
+            top: 50px;
+            margin-left: 10px;
+            overflow: visible;
+            padding: 2px;
+            background-color: khaki;
+            color: black;
+            border: 1px white;
+            font-size: 0.75rem;
+            transition: all 5s;
+        }
+        .menu-btn:checked~.menu {
+            flex-direction: row;
+            display: flex;
+        }
+        .menu {
+            clear: none;
+            float: left;
+            max-height: none;
+            flex-direction: row;
+            display: flex;
+            margin-top: 15px;
+        }
+        .menu li,
+        .menu li a {
+            padding-left: 0;
+            text-align: center;
+            cursor: default;
+        }
+        .menu-icon {
+            display: none;
+        }
+    }
+    
+    @media screen and (min-width: 1024px) {
+        /* pc escritorio */
+        header {
+            grid-template-areas: 'logo logo logo logo' 'nav nav nav nav';
+        }
+        .menu li {
+            float: left;
+            width: auto;
+            padding-left: 20px;
+        }
+        .menu li a {
+            padding: 10px 10px;
+            vertical-align: middle;
+        }
+        .menu label {
+            padding-left: 10px;
+            display: initial;
+        }
+        .menu i:hover~label {
+            display: block;
+            position: initial;
+            top: 0;
+            float: right;
+            margin-left: 0;
+            overflow: auto;
+            padding: 0px;
+            padding-left: 10px;
+            background-color: black;
+            color: white;
+            border: none;
+            font-size: 1rem;
+            transition: none;
+        }
+        .menu-btn:checked~.menu {
+            flex-direction: row;
+            display: flex;
+        }
+        .menu {
+            clear: none;
+            float: left;
+            max-height: none;
+            flex-direction: row;
+            display: flex;
+            margin-top: 15px;
+        }
+        .menu-icon {
+            display: none;
+        }
+        section {
+            grid-template-columns: auto auto auto auto auto;
+        }
+    }
+    /************************************************/
+    /*               FORMULARIOS                    */
+    /************************************************/
+    
+    .mostrar {
+        display: block;
+        transition: display 5s;
+    }
+    
+    .oculto {
+        display: none;
+        transition: display 5s;
+    }
+    
+    .formulario_flotante {
+        background-color: #666666;
+        border: solid 2px black;
+        border-radius: 10px;
+        font-size: 0.75rem;
+        float: right;
+        position: absolute;
+        padding: 20px;
+        top: 50px;
+        right: 10%;
+        overflow: hidden;
+        z-index: 1000;
+    }
+    
+    .formulario_flotante a {
+        float: right;
+        padding: 5px;
+        display: block;
+        cursor: default;
+        position: relative;
+        top: -10px;
+        left: 10px;
+        text-decoration: none;
+        color: white;
+        border-radius: 5px;
+        background-color: #cc0000;
+        border: solid 1px rgb(44, 0, 0);
+        box-shadow: black 1px 1px 4px;
+    }
+    
+    .formulario_flotante a:active {
+        top: -8px;
+        left: 12px;
+        background-color: black;
+        box-shadow: 0 0 0;
+    }
+    
+    .formulario_flotante form {
+        clear: both;
+    }
+    
+    .formulario_flotante label {
+        float: left;
+        margin-right: 10px;
+        padding: 5px;
+        display: block;
+    }
+    
+    .campo {
+        background-color: #333333;
+        border: solid white 1px;
+        border-radius: 5px;
+        color: white;
+        padding: 5px;
+        font-size: 0.75rem;
+        font-family: 'Open Sans', sans-serif;
+    }
+    
+    .boton {
+        background-color: #cc0000;
+        border: solid 1px rgb(44, 0, 0);
+        border-radius: 5px;
+        color: white;
+        font-size: 1rem;
+        font-family: 'Open Sans', sans-serif;
+        padding: 5px;
+        box-shadow: black 1px 1px 4px;
+    }
+    
+    .boton:active {
+        background-color: black;
+        position: relative;
+        box-shadow: 0 0 0;
+        top: -2px;
+        left: 2px;
+    }
+    
+    .registro {
+        margin: 30px;
+        padding: 20px;
+        background-color: #666666;
+        border: solid 2px black;
+        border-radius: 10px;
+        font-size: 0.75rem;
+    }
+    
+    .registro input,
+    .registro select {
+        background-color: #333333;
+        color: white;
+    }
+    /************************************************/
+    /*               ANIMACIONES                    */
+    /************************************************/
+    
+    @keyframes gardiente {
+        0% {
+            background-color: #cc0000;
+        }
+        50% {
+            background-color: rgb(44, 0, 0);
+        }
+        75% {
+            background-color: red;
+        }
+    }
+    /* The element to apply the animation to */
+    
+    .gradiente {
+        width: 50%;
+        height: 100px;
+        margin: 50px;
+        background-color: red;
+        animation-name: gardiente;
+        animation-iteration-count: 5;
+        animation-duration: 4s;
+    }
