@@ -18,6 +18,19 @@
     .logo {
         grid-area: logo;
         display: none;
+        font-family: 'Exo 2';
+        font-size: 3vw;
+        color: white;
+        padding-top: 5px;
+        padding-bottom: 2px;
+        padding-left: 5px;
+        padding-right: 5px;
+        margin: 10px;
+        text-shadow: #000 1px 1px 4px;
+    }
+    
+    .logo i {
+        margin-right: 10px;
     }
     
     nav {
@@ -194,6 +207,7 @@
         .logo {
             grid-area: logo;
             display: block;
+            font-family: 'Exo 2';
         }
         .logo img,
         .logo object {
