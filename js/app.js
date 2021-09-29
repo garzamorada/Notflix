@@ -1,3 +1,7 @@
+/******************************************/
+/*       muestra oculta capa login        */
+/******************************************/
+
 function abre_cierra(op) {
     if (op == 'cerrar') {
         var elemento = document.getElementById('formulario_flotante');
@@ -28,3 +32,28 @@ function abre_cierra(op) {
         }, false)
       })
   })()
+
+
+  
+/******************************************/
+/* defino minimo 18 años para el registro */
+/******************************************/
+
+
+function getMM(date) {
+  let mes = date.getMonth() + 1;
+  return mes < 10 ? '0' + mes : '' + mes; // ('' + mes) agrega un 0 si es menor a 10 y convierte a string
+}
+function getDD(date) {
+  let dia = date.getDate();
+  return dia < 10 ? '0' + dia : '' + dia; // ('' + dia) agrega un 0 si es menor a 10 y convierte a string
+}
+
+
+      var fecha = new Date();
+      var mes = getMM(fecha);
+      var dia = getDD(fecha);
+      var anio = fecha.getFullYear()-18;
+      var fechaMaxima=(anio + "-" + mes + "-" + dia);
+      var campoFecha=document.getElementById('validationCustomNacimiento');
+      campoFecha.max=fechaMaxima;
