@@ -18,6 +18,11 @@
     .logo {
         grid-area: logo;
         display: none;
+    }
+
+    .fondo_logo {
+        float: left;
+        display: block;
         font-family: 'Exo 2';
         font-size: 3vw;
         color: white;
@@ -27,6 +32,10 @@
         padding-right: 5px;
         margin: 10px;
         text-shadow: #000 1px 1px 4px;
+        background-image: url('../assets/images/fondo_notflix.svg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 60%;
     }
     
     .logo i {
@@ -52,6 +61,24 @@
         width: 100%;
         display: grid;
         grid-template-areas: 'nav nav nav nav';
+    }
+
+ .header_home {
+        background-color: transparent;
+        padding: 0%;
+        width: 100%;
+        display: flex;
+
+    }
+
+.content_home {
+        background-image: url('../assets/images/movie_bg1.jpg');
+        background-position: center;
+        background-size: 100%;
+        min-height: 85vh;
+        padding: 0%;
+        width: 100%;
+        display: flex;
     }
     
     .menu {
@@ -324,7 +351,7 @@
     }
     
     .formulario_flotante {
-        background-color: #666666;
+        background-color: #333333;
         border: solid 2px black;
         border-radius: 10px;
         font-size: 0.75rem;
@@ -374,11 +401,14 @@
     .campo {
         background-color: #333333;
         border: solid white 1px;
-        border-radius: 5px;
+        /*border-radius: 5px;*/
         color: white;
         padding: 5px;
         font-size: 0.75rem;
         font-family: 'Open Sans', sans-serif;
+        border-top: 0;
+        border-left: 0;
+        border-right: 0;
     }
     
     .boton {
@@ -403,16 +433,55 @@
     .registro {
         margin: 30px;
         padding: 20px;
-        background-color: #666666;
+        background-color: #333333;
         border: solid 2px black;
         border-radius: 10px;
         font-size: 0.75rem;
     }
     
     .registro input,
-    .registro select {
+    .registro select,
+    .registro input:focus ,
+    .registro select:focus,
+    .registro input:active ,
+    .registro select:active,
+    .registro input:focus:valid,
+    .registro select:focus:invalid,
+    .registro input:active:valid,
+    .registro select:active:invalid
+     {
         background-color: #333333;
-        color: white;
+        color: #666666;
+        border: solid white 1px;
+        border-radius: 0;
+        border-top: 0;
+        border-left: 0;
+        border-right: 0;
+        box-shadow: 0 0 0;
+    }
+    .form-control.is-valid:focus, .was-validated .form-control:focus:valid,
+    .form-control.is-invalid:focus, .was-validated .form-control:focus:invalid,
+    .form-select.is-invalid:focus, .was-validated .form-select:focus:invalid,
+    .form-select.is-valid:focus, .was-validated .form-select:focus:valid {
+        box-shadow: 0 0 0;
+
+    }
+
+    .registro .checkbox,  input.checkbox:focus, input.checkbox:active, input.checkbox:checked, input.checkbox:focus:checked    {
+        cursor: pointer;
+        background-color: #333333;
+        color: #666666;
+        border: solid white 1px;
+        border-radius: 5px;
+
+    }
+
+    .form-check-input.is-invalid:focus, .was-validated .form-check-input:focus:invalid,
+    .form-check-input.is-valid:focus, .was-validated .form-check-input:focus:valid,
+    .form-check-input.is-valid:focus:checked, .was-validated .form-check-input:focus:checked:valid
+     {
+        box-shadow: 0 0 0;
+        border: solid 1px;
     }
     
     .invalid-feedback {
