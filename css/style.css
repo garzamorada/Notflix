@@ -414,6 +414,11 @@
         background-color: #333333;
         color: white;
     }
+    
+    .invalid-feedback {
+        color: #cc0000;
+        font-size: 0.75rem;
+    }
     /************************************************/
     /*               ANIMACIONES                    */
     /************************************************/

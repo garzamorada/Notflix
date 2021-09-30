@@ -13,47 +13,58 @@ function abre_cierra(op) {
 }
 
 // Example starter JavaScript for disabling form submissions if there are invalid fields
-(function () {
+(function() {
     'use strict'
-  
+
     // Fetch all the forms we want to apply custom Bootstrap validation styles to
     var forms = document.querySelectorAll('.needs-validation')
-  
+
     // Loop over them and prevent submission
     Array.prototype.slice.call(forms)
-      .forEach(function (form) {
-        form.addEventListener('submit', function (event) {
-          if (!form.checkValidity()) {
-            event.preventDefault()
-            event.stopPropagation()
-          }
-  
-          form.classList.add('was-validated')
-        }, false)
-      })
-  })()
+        .forEach(function(form) {
+            form.addEventListener('submit', function(event) {
+                if (!form.checkValidity()) {
+                    event.preventDefault()
+                    event.stopPropagation()
+                }
+
+                form.classList.add('was-validated')
+            }, false)
+        })
+})()
 
 
-  
+var clave = document.getElementById('Clave');
+var confirma_clave = document.getElementById('Confirmar_Clave');
+
+function chequeaClave() {
+    if (clave.value === confirma_clave.value) {
+        confirma_clave.setCustomValidity('');
+    } else {
+        confirma_clave.setCustomValidity('Las contraseñas no coinciden');
+    }
+}
+
 /******************************************/
 /* defino minimo 18 años para el registro */
 /******************************************/
 
 
 function getMM(date) {
-  let mes = date.getMonth() + 1;
-  return mes < 10 ? '0' + mes : '' + mes; // ('' + mes) agrega un 0 si es menor a 10 y convierte a string
+    let mes = date.getMonth() + 1;
+    return mes < 10 ? '0' + mes : '' + mes; // ('' + mes) agrega un 0 si es menor a 10 y convierte a string
 }
+
 function getDD(date) {
-  let dia = date.getDate();
-  return dia < 10 ? '0' + dia : '' + dia; // ('' + dia) agrega un 0 si es menor a 10 y convierte a string
+    let dia = date.getDate();
+    return dia < 10 ? '0' + dia : '' + dia; // ('' + dia) agrega un 0 si es menor a 10 y convierte a string
 }
 
 
-      var fecha = new Date();
-      var mes = getMM(fecha);
-      var dia = getDD(fecha);
-      var anio = fecha.getFullYear()-18;
-      var fechaMaxima=(anio + "-" + mes + "-" + dia);
-      var campoFecha=document.getElementById('validationCustomNacimiento');
-      campoFecha.max=fechaMaxima;
+var fecha = new Date();
+var mes = getMM(fecha);
+var dia = getDD(fecha);
+var anio = fecha.getFullYear() - 18;
+var fechaMaxima = (anio + "-" + mes + "-" + dia);
+var campoFecha = document.getElementById('validationCustomNacimiento');
+campoFecha.max = fechaMaxima;
