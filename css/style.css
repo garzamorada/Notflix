@@ -61,8 +61,6 @@
         width: 100%;
         margin: 0;
         padding: 0;
-        position: -webkit-sticky;
-        position: sticky;
         z-index: 999;
     }
     
