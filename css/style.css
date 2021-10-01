@@ -4,6 +4,10 @@
     
     body {
         background-color: black;
+        background-image: url('../assets/images/movie_bg1.jpg');
+        background-position: '50% 50%';
+        background-repeat: no-repeat;
+        background-size: 100%;
         color: white;
         margin: 0px;
         padding: 0px;
@@ -11,15 +15,23 @@
     }
     
     footer {
-        background-color: gray !important;
-        font-family: 'ZCOOL KuaiLe', cursive;
+        background-image: linear-gradient(to top, black 75%, transparent 100%);
+        min-height: 30px;
+        padding-top: 15px;
+        width: 100%;
+        position: fixed;
+        bottom: 0px;
+        display: block;
+        font-size: 0.75rem;
+        vertical-align: bottom;
+        text-align: center;
     }
     
     .logo {
         grid-area: logo;
-        display: none;
+        display: block;
     }
-
+    
     .fondo_logo {
         float: left;
         display: block;
@@ -44,38 +56,26 @@
     
     nav {
         grid-area: nav;
-        display: block;
-        font-size: 1rem;
+        font-size: 0.75rem;
+        display: flexbox;
         width: 100%;
         margin: 0;
         padding: 0;
-        top: 0;
         position: -webkit-sticky;
         position: sticky;
         z-index: 999;
     }
     
     header {
-        background-color: #cc0000;
+        background: rgba(204, 0, 0, 0.75);
         padding: 0%;
         width: 100%;
         display: grid;
-        grid-template-areas: 'nav nav nav nav';
+        grid-template-areas: 'logo nav nav nav nav';
     }
-
- .header_home {
-        background-color: transparent;
-        padding: 0%;
-        width: 100%;
-        display: flex;
-
-    }
-
-.content_home {
-        background-image: url('../assets/images/movie_bg1.jpg');
-        background-position: center;
-        background-size: 100%;
-        min-height: 85vh;
+    
+    .content_home {
+        height: 100%;
         padding: 0%;
         width: 100%;
         display: flex;
@@ -93,11 +93,9 @@
     }
     
     .menu li {
-        padding: 5px;
-        background-color: #cc0000;
+        padding: 5px 50px 5px 5px;
         display: block;
-        width: 100%;
-        padding-left: 50px;
+        width: auto;
     }
     
     .menu label {
@@ -106,7 +104,7 @@
     
     .menu li:hover,
     .menu-btn:hover {
-        background-color: #000;
+        background: rgba(0, 0, 0, 0.75);
     }
     
     .menu li a {
@@ -167,6 +165,7 @@
     .menu-btn:checked~.menu {
         flex-direction: column;
         display: flex;
+        margin-left: -100px;
     }
     
     .menu-btn:checked~.menu-icon .navicon {
@@ -196,6 +195,7 @@
         padding: 30px;
         text-align: center;
         vertical-align: middle;
+        background: rgba(0, 0, 0, 0.75);
     }
     
     article {
@@ -240,26 +240,9 @@
         .logo object {
             max-height: 50px;
             margin: 5px;
-            fill: black;
         }
         section {
             grid-template-columns: auto auto auto auto;
-        }
-        .menu label {
-            display: none;
-        }
-        .menu i:hover~label {
-            display: block;
-            position: absolute;
-            top: 50px;
-            margin-left: 10px;
-            overflow: visible;
-            padding: 2px;
-            background-color: khaki;
-            color: black;
-            border: 1px white;
-            font-size: 0.75rem;
-            transition: all 5s;
         }
         .menu-btn:checked~.menu {
             flex-direction: row;
@@ -275,7 +258,7 @@
         }
         .menu li,
         .menu li a {
-            padding-left: 0;
+            padding: 10px 10px;
             text-align: center;
             cursor: default;
         }
@@ -311,10 +294,8 @@
             overflow: auto;
             padding: 0px;
             padding-left: 10px;
-            background-color: black;
             color: white;
             border: none;
-            font-size: 1rem;
             transition: none;
         }
         .menu-btn:checked~.menu {
@@ -441,15 +422,14 @@
     
     .registro input,
     .registro select,
-    .registro input:focus ,
+    .registro input:focus,
     .registro select:focus,
-    .registro input:active ,
+    .registro input:active,
     .registro select:active,
     .registro input:focus:valid,
     .registro select:focus:invalid,
     .registro input:active:valid,
-    .registro select:active:invalid
-     {
+    .registro select:active:invalid {
         background-color: #333333;
         color: #666666;
         border: solid white 1px;
@@ -459,27 +439,36 @@
         border-right: 0;
         box-shadow: 0 0 0;
     }
-    .form-control.is-valid:focus, .was-validated .form-control:focus:valid,
-    .form-control.is-invalid:focus, .was-validated .form-control:focus:invalid,
-    .form-select.is-invalid:focus, .was-validated .form-select:focus:invalid,
-    .form-select.is-valid:focus, .was-validated .form-select:focus:valid {
+    
+    .form-control.is-valid:focus,
+    .was-validated .form-control:focus:valid,
+    .form-control.is-invalid:focus,
+    .was-validated .form-control:focus:invalid,
+    .form-select.is-invalid:focus,
+    .was-validated .form-select:focus:invalid,
+    .form-select.is-valid:focus,
+    .was-validated .form-select:focus:valid {
         box-shadow: 0 0 0;
-
     }
-
-    .registro .checkbox,  input.checkbox:focus, input.checkbox:active, input.checkbox:checked, input.checkbox:focus:checked    {
+    
+    .registro .checkbox,
+    input.checkbox:focus,
+    input.checkbox:active,
+    input.checkbox:checked,
+    input.checkbox:focus:checked {
         cursor: pointer;
         background-color: #333333;
         color: #666666;
         border: solid white 1px;
         border-radius: 5px;
-
     }
-
-    .form-check-input.is-invalid:focus, .was-validated .form-check-input:focus:invalid,
-    .form-check-input.is-valid:focus, .was-validated .form-check-input:focus:valid,
-    .form-check-input.is-valid:focus:checked, .was-validated .form-check-input:focus:checked:valid
-     {
+    
+    .form-check-input.is-invalid:focus,
+    .was-validated .form-check-input:focus:invalid,
+    .form-check-input.is-valid:focus,
+    .was-validated .form-check-input:focus:valid,
+    .form-check-input.is-valid:focus:checked,
+    .was-validated .form-check-input:focus:checked:valid {
         box-shadow: 0 0 0;
         border: solid 1px;
     }
