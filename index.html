@@ -8,9 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/style.css">
     <script src="https://kit.fontawesome.com/59c8ee105d.js" crossorigin="anonymous"></script>
@@ -28,7 +26,7 @@
                 <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
                 <ul class="menu">
                     <li>
-                        <a href="../pages/login.html"><i class="fas fa-user"></i><label>Ingresar</label></a>
+                        <a href="#" onclick="abre_cierra('mostrar','login');"><i class="fas fa-user"></i><label>Ingresar</label></a>
                     </li>
                     <li>
                         <a href="../pages/signup.html"><i class="fas fa-user-plus"></i><label>Registro</label></a>
@@ -42,13 +40,38 @@
         </header>
 
         <content class="content_home">
-            <div class="gradiente">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Recusandae assumenda neque
-                facere natus, delectus quasi explicabo rerum earum ullam ab sapiente dolor a temporibus provident!
-                Deleniti aliquid nihil quia hic.</div>
+
+            <div class="portada">
+                <div class="descripcion">
+                    <h2>Cartelera de Películas</h2>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Recusandae assumenda neque facere natus, delectus quasi explicabo rerum earum ullam ab sapiente dolor a temporibus provident! Deleniti aliquid nihil quia hic.</p>
+                </div>
+                <div class="boton1"><a class="boton gradiente" id="registrarse" onmouseover="cambia_clase('boton','registrarse');" onmouseout="cambia_clase('boton gradiente','registrarse');" href="pages/signup.html">Registrarse</a></div>
+                <div class="boton2"><a class="boton" href="#" onclick="abre_cierra('mostrar','login');">Ingresar</a></div>
+                <div id="login" class="login ocultar">
+                    <div class="titulo">Ingreso de usuarios</div>
+                    <div class="X"><a class="boton" href="#" onclick="abre_cierra('ocultar','login');">X</a></div>
+                    <form action="pages/login.html" method="GET">
+                        <div><label><i class="fas fa-at"></i></label><input class="campo" type="email" name="email" placeholder="usuario@dominio.com" required></div>
+                        <div><label><i class="fas fa-key"></i></label><input class="campo" type="password" name="clave" placeholder="contraseña" required></div>
+                        <div><label><i class="fas fa-sign-in-alt"></i></label><input type="submit" name="submit" class="boton" value="Ingresar"></div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="logos">
+                <div><img src="/assets/images/marvel.png"></div>
+                <div><img src="/assets/images/dc.png"></div>
+                <div><img src="/assets/images/star-wars.png"></div>
+                <div><img src="/assets/images/star-trek.png"></div>
+                <div><img src="/assets/images/warner.png"></div>
+                <div><img src="/assets/images/fox.png"></div>
+            </div>
+            <div class="gradiente"></div>
         </content>
         <footer> Copyright 2021</footer>
     </div>
-
+    <script src="js/app.js"></script>
 </body>
 
 </html>
