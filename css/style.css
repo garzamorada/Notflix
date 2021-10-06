@@ -17,7 +17,7 @@
     
     .container {
         width: 100vw;
-        height: 100vh;
+        min-height: 100vh;
         padding: 0;
         margin: 0;
     }
@@ -194,14 +194,12 @@
     /**************************************************/
     
     .logos {
-        clear: auto;
         display: flex;
         flex-wrap: wrap;
         justify-content: space-around;
-        width: 99vw;
+        width: 99%;
         padding: 5px;
         margin: 0;
-        text-align: center;
         margin-bottom: 10px;
     }
     
@@ -212,6 +210,8 @@
         background-color: white;
         width: 100px;
         box-shadow: white 0 0 10px;
+        margin: 5px;
+        max-height: 45px;
     }
     
     .logos img {
@@ -225,7 +225,8 @@
     
     .portada .descripcion {
         grid-area: 1 / 1 / 2 / 3;
-        width: 100%;
+        width: 99%;
+        padding: 5px;
     }
     
     .portada .boton1 {
@@ -239,6 +240,10 @@
         width: 100%;
         text-align: center;
     }
+
+    .portada .logos {
+        grid-area: 4 / 1 / 5 / 3;
+    }
     
     .portada {
         padding: 20px;
@@ -246,7 +251,7 @@
         display: grid;
         grid-gap: 10px;
         grid-template-columns: auto auto;
-        grid-template-rows: auto auto auto;
+        grid-template-rows: auto auto auto auto;
         justify-content: space-around;
         background: rgba(0, 0, 0, 0.75);
         height: 50vh;
@@ -277,6 +282,7 @@
     }
     
     .mostrar {
+        position: relative;
         height: 200px;
         transition: all 0.5s;
         padding: 20px;
