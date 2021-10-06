@@ -1,10 +1,11 @@
 var jsonFile = '../js/peliculas.json';
 
 const xmlhttp = new XMLHttpRequest();
-xmlhttp.onload = function () {
+xmlhttp.onload = function() {
     const peliculas = JSON.parse(this.responseText);
 
     var plantilla = document.getElementsByTagName("template")[0];
+    var inner = plantilla.innerHTML;
     var seccion = document.getElementsByTagName("section")[0];
     var plantillaContent = '';
 
@@ -15,30 +16,13 @@ xmlhttp.onload = function () {
         imagen = peliculas[i].imagen;
         youtube = peliculas[i].youtube;
 
-        var htmlNuevo='';
-        for (u = 0; u < plantilla.length; u++) {
-            htmlNuevo=htmlNuevo+plantilla[u].toString();
-            console.log(plantilla[u])
-        }
+        htmlNuevo = inner;
+        htmlNuevo = htmlNuevo.replaceAll('${titulo}', titulo);
+        htmlNuevo = htmlNuevo.replaceAll('${url}', url);
+        htmlNuevo = htmlNuevo.replaceAll('${categoria}', categoria);
+        htmlNuevo = htmlNuevo.replaceAll('${imagen}', imagen);
+        htmlNuevo = htmlNuevo.replaceAll('${youtube}', youtube);
 
-        htmlNuevo=htmlNuevo.replace('${titulo}',titulo);
-        htmlNuevo=htmlNuevo.replace('${url}',url);
-        htmlNuevo=htmlNuevo.replace('${categoria}',categoria);
-        htmlNuevo=htmlNuevo.replace('${imagen}',imagen);
-        htmlNuevo=htmlNuevo.replace('${youtube}',youtube);
-       
-
-
-        /*let htmlNuevo = `
-        <figure class="peliculas ${categoria} movie-mostrar">
-            <a href="../pages/${url}">
-                <img src="../assets/images/peliculas/${imagen}">
-            </a>
-            <figcaption>
-                ${titulo}
-            </figcaption>
-        </figure>
-        `;*/
         plantillaContent = plantillaContent + htmlNuevo;
 
         seccion.innerHTML = (plantillaContent);
@@ -72,17 +56,14 @@ function mostrarClase(elementos) {
 }
 
 function seleccionaPeliculas(categoria) {
-    
+
     if (categoria != 'todas') {
         var elementos1 = document.getElementsByClassName("peliculas");
         ocultarClase(elementos1);
         var elementos2 = document.getElementsByClassName(categoria);
         mostrarClase(elementos2);
     } else {
-            var elementos1 = document.getElementsByClassName("peliculas");
-            mostrarClase(elementos1);
+        var elementos1 = document.getElementsByClassName("peliculas");
+        mostrarClase(elementos1);
     }
 }
-
-
-
