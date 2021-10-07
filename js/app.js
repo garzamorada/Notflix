@@ -73,20 +73,3 @@ var anio = fecha.getFullYear() - 18;
 var fechaMaxima = (anio + "-" + mes + "-" + dia);
 var campoFecha = document.getElementById('validationCustomNacimiento');
 if (campoFecha != null) { campoFecha.max = fechaMaxima; }
-
-/*********************************************/
-/*              manejo se sesiones           */
-/*********************************************/
-
-function userlogin(usuario) {
-
-    localStorage.setItem('usuario', usuario);
-    console.log(usuario);
-
-}
-
-function userLogout(usuario) {
-
-    localStorage.clear('usuario');
-
-}

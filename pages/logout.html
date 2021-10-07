@@ -9,8 +9,13 @@
 </head>
 
 <body>
+    <h3>Bienvenido</h3>
     Rediriginado al home...
+    <script src="../js/sesiones.js"></script>
     <script>
+        let usuario = localStorage.getItem('usuario');
+        document.getElementsByTagName('h3')[0].innerText = `Hasta la próxima ${usuario}`;
+        userLogout(usuario);
         setTimeout(location.replace('../index.html'), 5000);
     </script>
 </body>

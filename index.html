@@ -16,6 +16,7 @@
 </head>
 
 <body>
+    <script src="js/sesiones.js"></script>
     <div id="container">
         <header class="home">
             <div class="logo">
@@ -35,10 +36,33 @@
                         <a href="../pages/contact.html"><i
                                 class="fas fa-envelope-open-text"></i><label>Contactanos</label></a>
                     </li>
+                    <template>
+                        <li>
+                        <a href="../index.html"><i class="fas fa-home"></i><label>Home</label></a>
+                    </li>
+                    <li>
+                        <a href="../pages/movies.html"><i class="fa fa-film "></i><label>Peliculas</label></a>
+                    </li>
+                    <li>
+                        <a href="../pages/options.html"><i class="fas fa-users-cog"></i><label>Opciones</label></a>
+                    </li>
+                    <li>
+                        <a href="../pages/logout.html"><i class="fas fa-user-times"></i><label>Salir</label></a>
+                    </li>
+                    <li>
+                        <a href="../pages/contact.html"><i
+                                class="fas fa-envelope-open-text"></i><label>Contactanos</label></a>
+                    </li>
+                </template>
                 </ul>
             </nav>
         </header>
-
+        <script>
+            if (isSetUser()) {
+                var menu = document.getElementsByTagName("template")[0].innerHTML;
+                document.getElementsByClassName('menu')[0].innerHTML = menu;
+            }
+        </script>
         <content class="content_home">
 
             <div class="portada">
@@ -51,10 +75,10 @@
                 <div id="login" class="login ocultar">
                     <div class="titulo">Ingreso de usuarios</div>
                     <div class="X"><a class="boton" href="#" onclick="abre_cierra('ocultar','login');">X</a></div>
-                    <form onsubmit="userLogin(document.getElementsByName('email')[0].value);" action="pages/login.html" method="GET">
+                    <form action="pages/login.html" method="GET">
                         <div><label><i class="fas fa-at"></i></label><input class="campo" type="email" name="email" placeholder="usuario@dominio.com" required></div>
                         <div><label><i class="fas fa-key"></i></label><input class="campo" type="password" name="clave" placeholder="contraseña" required></div>
-                        <div><label><i class="fas fa-sign-in-alt"></i></label><input type="submit" name="submit" class="boton" value="Ingresar"></div>
+                        <div><label><i class="fas fa-sign-in-alt"></i></label><input type="submit" name="submit" class="boton" value="Ingresar" onclick="userLogin(document.getElementsByName('email')[0].value);"></div>
                     </form>
                 </div>
                 <div class="logos">
