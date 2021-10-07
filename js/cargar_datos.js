@@ -16,6 +16,7 @@ xmlhttp.onload = function() {
         imagen = peliculas[i].imagen;
         youtube = peliculas[i].youtube;
 
+
         htmlNuevo = inner;
         htmlNuevo = htmlNuevo.replaceAll('${titulo}', titulo);
         htmlNuevo = htmlNuevo.replaceAll('${url}', url);
@@ -25,9 +26,9 @@ xmlhttp.onload = function() {
 
         plantillaContent = plantillaContent + htmlNuevo;
 
-        seccion.innerHTML = (plantillaContent);
-
     }
+    seccion.innerHTML = (plantillaContent);   
+
 }
 xmlhttp.open("GET", jsonFile, true);
 xmlhttp.send();
