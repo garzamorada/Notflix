@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" href="../assets/ico/favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -44,16 +45,16 @@
             </nav>
         </header>
         <div class="container_seccion">
-        <div class="filtro">
-            <select name="categorias" onChange="seleccionaPeliculas(this.options[this.selectedIndex].value)">
+            <div class="filtro">
+                <select name="categorias" onChange="seleccionaPeliculas(this.options[this.selectedIndex].value)">
                 <option selected disabled >Filtrar Películas</option>
                 <option value="todas">Todas</option>
                 <option value="marvel">Marvel</option>
                 <option value="dc">DC</option>
             </select>
-        </div>
-        <section>
-            <template>
+            </div>
+            <section>
+                <template>
                 <figure class="peliculas ${categoria} movie-mostrar">
                     <a href="${url}?youtube=${youtube}&titulo=${titulo}">
                         <img src="../assets/peliculas/${imagen}">
@@ -63,7 +64,7 @@
                     </figcaption>
                 </figure>
             </template>
-        </section>
+            </section>
         </div>
         <footer> Copyright 2021</footer>
     </div>

@@ -1,37 +1,42 @@
-var jsonFile = '../js/peliculas.json';
+var jsonFile = '../js/peliculas.json'; // archivo json
 
 const xmlhttp = new XMLHttpRequest();
-xmlhttp.onload = function() {
-    const peliculas = JSON.parse(this.responseText);
 
-    var plantilla = document.getElementsByTagName("template")[0];
-    var inner = plantilla.innerHTML;
-    var seccion = document.getElementsByTagName("section")[0];
+xmlhttp.open("GET", jsonFile, true);
+xmlhttp.send();
+
+xmlhttp.onload = function() { // ejecuta la funcion si cargó el json
+
+    var array_objeto = JSON.parse(this.responseText); // texo del json convertido a objeto
+
+    var inner = templateHTMLtoTemplateString(array_objeto, 'template');
+
+    var seccion = document.getElementsByTagName('section')[0]; // etiqueta en donde se va a poner el html
+    seccion.innerHTML = inner;
+
+}
+
+
+templateHTMLtoTemplateString = function(array_objeto, tag_template) {
+    // toma como paramentro array de 2 dimensiones o un objeto y el nombre del template
+
+    var plantilla = document.getElementsByTagName(tag_template)[0]; // primer ocurrencia del tag
     var plantillaContent = '';
 
-    for (i = 0; i < peliculas.length; i++) {
-        titulo = peliculas[i].titulo;
-        url = peliculas[i].url;
-        categoria = peliculas[i].categoria;
-        imagen = peliculas[i].imagen;
-        youtube = peliculas[i].youtube;
+    for (i = 0; i < array_objeto.length; i++) {
+        var htmlNuevo = plantilla.innerHTML;
+        var variables = Object.keys(array_objeto[i]);
 
-
-        htmlNuevo = inner;
-        htmlNuevo = htmlNuevo.replaceAll('${titulo}', titulo);
-        htmlNuevo = htmlNuevo.replaceAll('${url}', url);
-        htmlNuevo = htmlNuevo.replaceAll('${categoria}', categoria);
-        htmlNuevo = htmlNuevo.replaceAll('${imagen}', imagen);
-        htmlNuevo = htmlNuevo.replaceAll('${youtube}', youtube);
+        for (u = 0; u < variables.length; u++) {
+            nombreVariable = variables[u];
+            htmlNuevo = htmlNuevo.replaceAll('${' + nombreVariable + '}', array_objeto[i][nombreVariable]);
+        }
 
         plantillaContent = plantillaContent + htmlNuevo;
 
     }
-    seccion.innerHTML = (plantillaContent);   
-
+    return plantillaContent;
 }
-xmlhttp.open("GET", jsonFile, true);
-xmlhttp.send();
 
 
 /******************************************/
