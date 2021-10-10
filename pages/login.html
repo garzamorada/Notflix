@@ -4,17 +4,99 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" href="../assets/ico/favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="https://kit.fontawesome.com/59c8ee105d.js" crossorigin="anonymous"></script>
+    <title>Clase 07 - Netflix de Codo</title>
 </head>
 
 <body>
-    <h3>Bienvenido</h3>
-    <script>
-        let usuario = localStorage.getItem('usuario');
-        document.getElementsByTagName('h3')[0].innerText = `Bienvenido ${usuario}`;
-        setTimeout(location.replace('../pages/movies.html'), 5000);
-    </script>
+    <script src="../js/sesiones.js"></script>
+    <div id="container">
+        <header class="home">
+            <div class="logo">
+                <div class="fondo_logo"><i class="fas fa-play-circle"></i>Notflix</div>
+            </div>
+            <nav>
+                <input class="menu-btn" type="checkbox" id="menu-btn" />
+                <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+                <ul class="menu">
+                    <li>
+                        <a href="../index.html"><i class="fas fa-home"></i><label>Home</label></a>
+                    </li>
+                    <li>
+                        <a href="#" onclick="abre_cierra('mostrar','login');"><i class="fas fa-user"></i><label>Ingresar</label></a>
+                    </li>
+                    <li>
+                        <a href="../pages/signup.html"><i class="fas fa-user-plus"></i><label>Registro</label></a>
+                    </li>
+                    <li>
+                        <a href="../pages/contact.html"><i
+                                    class="fas fa-envelope-open-text"></i><label>Contactanos</label></a>
+                    </li>
+                    <template>
+                            <li>
+                            <a href="../index.html"><i class="fas fa-home"></i><label>Home</label></a>
+                        </li>
+                        <li>
+                            <a href="../pages/movies.html"><i class="fa fa-film "></i><label>Peliculas</label></a>
+                        </li>
+                        <li>
+                            <a href="../pages/options.html"><i class="fas fa-users-cog"></i><label>Opciones</label></a>
+                        </li>
+                        <li>
+                            <a href="../pages/logout.html"><i class="fas fa-user-times"></i><label>Salir</label></a>
+                        </li>
+                        <li>
+                            <a href="../pages/contact.html"><i
+                                    class="fas fa-envelope-open-text"></i><label>Contactanos</label></a>
+                        </li>
+                    </template>
+                </ul>
+            </nav>
+        </header>
+        <script>
+            if (isSetUser()) {
+                var menu = document.getElementsByTagName("template")[0].innerHTML;
+                document.getElementsByClassName('menu')[0].innerHTML = menu;
+            }
+        </script>
+        <div class="container_seccion">
+            <h3>Bienvenido</h3>
+            <script>
+                let usuario = localStorage.getItem('usuario');
+                if (usuario != null) {
+                    document.getElementsByTagName('h3')[0].innerText = `Bienvenido ${usuario}`;
+                    setTimeout(location.replace('../pages/movies.html'), 5000);
+                }
+            </script>
+            <template id="template2">
+                <div class="boton2"><a class="boton" href="#" onclick="abre_cierra('mostrar','login');">Ingresar</a></div>
+                <div id="login" class="login mostrar">
+                    <div class="titulo">Ingreso de usuarios</div>
+                    <div class="X"><a class="boton" href="#" onclick="abre_cierra('ocultar','login');">X</a></div>
+                    <form action="../pages/login.html" method="GET">
+                        <div><label><i class="fas fa-at"></i></label><input class="campo" type="email" name="email" placeholder="usuario@dominio.com" required></div>
+                        <div><label><i class="fas fa-key"></i></label><input class="campo" type="password" name="clave" placeholder="contraseña" required></div>
+                        <div><label><i class="fas fa-sign-in-alt"></i></label><input type="submit" name="submit" class="boton" value="Ingresar" onclick="userLogin(document.getElementsByName('email')[0].value);"></div>
+                    </form>
+                </div>
+            </template>
+            <script>
+                if (usuario == null) {
+                    var login = document.getElementsByTagName("template")[1].innerHTML;
+                    document.getElementsByClassName('container_seccion')[0].innerHTML = login;
+                }
+            </script>
+        </div>
+        <footer> Copyright 2021</footer>
+    </div>
+    <script src="../js/app.js"></script>
 </body>
 
 </html>

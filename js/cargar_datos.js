@@ -25,17 +25,37 @@ templateHTMLtoTemplateString = function(array_objeto, tag_template) {
 
     for (i = 0; i < array_objeto.length; i++) {
         var htmlNuevo = plantilla.innerHTML;
-        var variables = Object.keys(array_objeto[i]);
+        htmlNuevo = remplazaVariableExpReg(array_objeto[i], htmlNuevo);
 
-        for (u = 0; u < variables.length; u++) {
-            nombreVariable = variables[u];
-            htmlNuevo = htmlNuevo.replaceAll('${' + nombreVariable + '}', array_objeto[i][nombreVariable]);
-        }
+        /*var variables = Object.keys(array_objeto[i]);*/
+        /*htmlNuevo = remplazaVariable(variables, array_objeto[i], htmlNuevo);*/
 
         plantillaContent = plantillaContent + htmlNuevo;
 
     }
     return plantillaContent;
+}
+
+
+var remplazaVariable = function(array_keys, array_asoc, html_texto) {
+    for (u = 0; u < array_keys.length; u++) {
+        nombreVariable = array_keys[u];
+        html_texto = html_texto.replaceAll('${' + nombreVariable + '}', array_asoc[nombreVariable]);
+    }
+    return html_texto;
+}
+
+var remplazaVariableExpReg = function(array_asoc, html_texto) {
+    var ExpReg = new RegExp(/\$\{(\w+)\}/g);
+
+    var variables = [...html_texto.matchAll(ExpReg)];
+
+    for (let index = 0; index < variables.length; index++) {
+
+        let nombreVariable = variables[index][1];
+        html_texto = html_texto.replaceAll('${' + nombreVariable + '}', array_asoc[nombreVariable]);
+    }
+    return html_texto;
 }
 
 

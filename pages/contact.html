@@ -1,50 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/style.css">
-    <title>Contact page</title>
+    <script src="https://kit.fontawesome.com/59c8ee105d.js" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="../assets/ico/favicon.ico">
+    <title>Contacto</title>
 </head>
+
 <body>
-    <header>
-        <div class="logo">
-            <div class="fondo_logo"><i class="fas fa-play-circle"></i>Notflix</div>
+    <script src="../js/sesiones.js"></script>
+    <div id="container">
+        <header class="home">
+            <div class="logo">
+                <div class="fondo_logo"><i class="fas fa-play-circle"></i>Notflix</div>
+            </div>
+            <nav>
+                <input class="menu-btn" type="checkbox" id="menu-btn" />
+                <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+                <ul class="menu">
+                    <li>
+                        <a href="../index.html"><i class="fas fa-home"></i><label>Home</label></a>
+                    </li>
+                    <li>
+                        <a href="../pages/login.html" onclick="abre_cierra('mostrar','login');"><i class="fas fa-user"></i><label>Ingresar</label></a>
+                    </li>
+                    <li>
+                        <a href="../pages/signup.html"><i class="fas fa-user-plus"></i><label>Registro</label></a>
+                    </li>
+                    <li>
+                        <a href="../pages/contact.html"><i
+                                    class="fas fa-envelope-open-text"></i><label>Contactanos</label></a>
+                    </li>
+                    <template>
+                            <li>
+                            <a href="../index.html"><i class="fas fa-home"></i><label>Home</label></a>
+                        </li>
+                        <li>
+                            <a href="../pages/movies.html"><i class="fa fa-film "></i><label>Peliculas</label></a>
+                        </li>
+                        <li>
+                            <a href="../pages/options.html"><i class="fas fa-users-cog"></i><label>Opciones</label></a>
+                        </li>
+                        <li>
+                            <a href="../pages/logout.html"><i class="fas fa-user-times"></i><label>Salir</label></a>
+                        </li>
+                        <li>
+                            <a href="../pages/contact.html"><i
+                                    class="fas fa-envelope-open-text"></i><label>Contactanos</label></a>
+                        </li>
+                    </template>
+                </ul>
+            </nav>
+        </header>
+        <script>
+            if (isSetUser()) {
+                var menu = document.getElementsByTagName("template")[0].innerHTML;
+                document.getElementsByClassName('menu')[0].innerHTML = menu;
+            }
+        </script>
+        <div class="container_seccion">
+            <form id="contact" class="options">
+                <div class="option_no_label">
+                    <h3>Contactanos con tus preguntas</h3>
+                </div>
+                <div class="leyenda"><label>Nombres:</label></div>
+                <div class="option"><input class="campo" id="nombre" name="nombre" type="text" placeholder="Nombres" required></div>
+                <div class="leyenda"><label>Apellido:</label></div>
+                <div class="option"><input class="campo" id="apellido" name="apellido" type="text" placeholder="Apellido" required></div>
+                <div class="leyenda"><label>Correo electrónico:</label></div>
+                <div class="option"><input class="campo" id="email" name="email" type="email" placeholder="usuario@dominio.com"></div>
+                <div class="leyenda"><label>Ingresa tu mensaje:</label></div>
+                <div class="option"><textarea class="campo" rows="5" id="comments" name="comments" placeholder="Escribí aquí tu comentario"></textarea></div>
+                <div class="leyenda">
+                    <label><i class="fab fa-whatsapp"></i> Enviar por whatsapp: </label>
+                </div>
+                <div class="option">
+                    <button class="boton" id="submit" type="submit" value="Contactar"><i class="fab fa-whatsapp"></i> Contactar</button>
+                </div>
+            </form>
         </div>
-        <nav>
-            <input class="menu-btn" type="checkbox" id="menu-btn" />
-            <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
-            <ul class="menu">
-                <li>
-                    <a href="../index.html"><i class="fas fa-home"></i><label>Home</label></a>
-                </li>
-                <li>
-                    <a href="../pages/movies.html"><i class="fa fa-film "></i><label>Peliculas</label></a>
-                </li>
-                <li>
-                    <a href="../pages/login.html"><i class="fas fa-user"></i><label>Ingresar</label></a>
-                </li>
-                <li>
-                    <a href="../pages/signup.html"><i class="fas fa-user-plus"></i><label>Registro</label></a>
-                </li>
-                <li>
-                    <a href="../pages/contact.html"><i class="fas fa-envelope-open-text"></i><label>Contactanos</label></a>
-                </li>
-                <li>
-                    <a href="https://www.google.com" target="__blank"><i class="fas fa-link"></i><label>Enlace a otro lado</label></a>
-                </li>
-            </ul>
-        </nav>
-    </header>
-    Contactanos con tus preguntas
-    <form action="https://www.w3schools.com/action_page.php" method="POST" target="__blank" >
-        <fieldset>
-            <legend>Ingresa comentario:</legend>
-            <textarea cols="20" rows="10" name="comments" >Este texto esta fijo</textarea>
-          
-            <input type="submit" value="Submit">
-        </fieldset>
-    </form>
+        <footer> Copyright 2021</footer>
+    </div>
+    <script src="../js/app.js"></script>
+    <script src="../js/whatsapp.js"></script>
 </body>
+
 </html>
