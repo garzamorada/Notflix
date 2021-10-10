@@ -764,7 +764,8 @@
     .options .option input,
     .options .option select,
     .option textarea {
-        width: 20rem;
+        width: 95%;
+        max-width: 20rem;
     }
     /************************************************/
     /*               ANIMACIONES                    */
